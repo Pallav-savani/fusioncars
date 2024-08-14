@@ -1,0 +1,1128 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root{
+    --red:#f90622;
+    --light-red:#ff809c;
+    --black:#130f40;
+    --light-color:#666;
+    --border:.1rem solid rgba(0,0,0,.1);
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+*{
+    font-family:  'Ubuntu',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform:capitalize;
+    transition: all .2s linear;
+}
+html{
+    font-size: 62.5%;
+    overflow-x:hidden ;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+body{
+    width: 100%;
+    height: 100vh;
+}
+section{
+    padding: 2rem 9%;
+}
+.heading{
+    text-align: center;
+    padding-bottom: 2rem;
+    font-size: 4.5rem;
+    color: var(--black);
+}
+.heading span{
+    position: relative;
+    z-index: 0;
+}
+.heading span::before{
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: var(--red);
+    clip-path: polygon(0 90%,100% 80%, 100% 100%,0% 100%);
+}
+
+.btn{
+    position: relative;
+    width: max-content;
+    margin-top: 1rem;
+    border-radius: .5rem;
+    background: var(--light-red);
+    color: var(--black);
+    font-weight: 500;
+    font-size: 1.7rem;
+    cursor: pointer;
+    padding: .8rem .8rem;
+}
+.btn i{
+    font-size: 20px;
+}
+.btn:hover{
+    color: var(--red);
+}
+.header
+{
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 9%;
+    
+}
+.header .logo{
+    font-size: 2.5rem;
+    color: var(--black);
+    font-weight: bolder;
+}
+.header .logo span{
+    color: var(--red);
+}
+.header .navbar a{
+    font-size: 1.7rem;
+    margin: 0 1rem;
+    color: var(--black);
+}
+.header .navbar a:hover{
+    color: var(--red);
+}
+.header .btn{
+    margin-top: 0;
+}
+.header #login-btn i{
+    font-size: 2.5rem;
+    color: var(--light-color);
+    cursor: pointer;
+    display: none;
+}
+#menu-btn{
+    font-size: 2.5rem;
+    color: var(--light-color);
+    cursor: pointer;
+    display: none;
+}
+
+.header.active{
+    box-shadow: var(--box-shadow);
+    padding: 2rem 9%;
+
+}
+.login-form-cotainer{
+    position: fixed;
+    top: -105%;
+    left: 0;
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+    background: rgba(255,255,255,.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+.login-form-cotainer.active{
+    top:0;
+    opacity: 1;
+}
+.login-form-cotainer form{
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    background: #fff;
+    border: var(--border);
+    text-align: center;
+    width: 40rem;
+}
+.login-form-cotainer form .button{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+}
+.login-form-cotainer form  .btn{
+    display: block;
+    width: 100%;
+    margin: .5rem 0;
+}
+.login-form-cotainer form h3{
+    color: var(--black);
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+}
+.login-form-cotainer form .box{
+    margin: .7rem 0;
+    width: 100%;
+    text-transform: none;
+    color: var(--black);
+    font-size: 1.6rem;
+    padding: 1rem 1.2rem;
+    border: var(--border);
+    border-radius: .5rem;
+}
+.login-form-cotainer form p{
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    color: var(--light-color);
+}
+.login-form-cotainer form p a{
+
+    color: var(--red);
+    text-decoration: underline;
+}
+.login-form-cotainer #close-login-form{
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+    font-size: 5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.home{
+    padding-top: 10rem;
+    text-align: center;
+    overflow-x: hidden;
+}
+.home h1{
+    font-size: 7.5vw;
+    text-transform: uppercase;
+    color: var(--black);
+}
+.home img{
+    width: 100%;
+    margin: 1rem 0;
+
+}
+
+.icons-container{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+    gap:1rem;
+    background: #eee;
+}
+.icons-container .icons{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+}
+.icons-container .icons i{
+    height: 6rem;
+    width: 6rem;
+    line-height: 6rem;
+    font-size: 2.5rem;
+    border-radius: 50%;
+    background: #eee;
+    color: var(--black);
+    text-align: center;
+}
+.icons-container .icons .content h3{
+    color: var(--red);
+    font-size: 2rem;
+}
+.icons-container .icons .content p{
+    color: var(--light-color);
+    font-size: 1.5rem;
+}
+.icons-container .icons:hover{
+    background: var(--black);
+}
+.icons-container .icons:hover i{
+    background: var(--red);
+} 
+.icons-container .icons:hover .content h3{
+    color: #fff ;
+} 
+.icons-container .icons:hover .content p{
+    color: #eee;
+}
+
+.vehicles{
+    position: relative;
+    width: 100%;
+    margin-top: 10rem;
+}
+.vehicles .vehicles-slider{
+    padding-top: 4.5rem;
+    padding-bottom: 4rem;
+}
+.vehicles .vehicles-slider .box{
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    text-align: center;
+}
+.vehicles .vehicles-slider .box img{
+    width: 100%;
+    opacity: .5;
+    transform: scale(.8);
+}
+.vehicles .vehicles-slider .box .content{
+    transform: scale(0);
+    padding-top: 1rem;
+}
+
+.vehicles .vehicles-slider .swiper-slide-active img{
+    opacity: 1;
+    transform: scale(1);
+}
+.vehicles .vehicles-slider .swiper-slide-active .content{
+    transform: scale(1);
+}
+.vehicles .vehicles-slider .box .content h3{
+    font-size: 1.5rem;
+    color: var(--black);
+}
+.vehicles .vehicles-slider .box .content .price{
+    font-size: 2.3rem;
+    color: var(--red);
+    padding: 1rem 0;
+    font-weight: bolder;
+}
+
+.vehicles .vehicles-slider .box .content .price span{
+    font-size: 1.7rem;
+    color: var(--light-color);
+    font-weight: normal;
+}
+.vehicles .vehicles-slider .box .content p{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    padding: 1rem;
+    padding-top: 1.6rem;
+    border-top: var(--border);
+    color: var(--light-color);
+}
+.vehicles .vehicles-slider .box .content p span{
+    color: var(--red);
+    font-size: .8rem;
+    padding: 0 .5rem;
+}
+.swiper-pagination-bullet-active{
+    background: var(--red);
+}
+
+
+.services .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    gap: 1rem;
+}
+.services .box-container .box{
+    text-align: center;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+}
+.services .box-container .box i{
+    height: 6rem;
+    width: 6rem;
+    line-height: 6rem;
+    font-size: 2.5rem;
+    color: var(--black);
+    background: var(--red);
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+.services .box-container .box h3{
+    color: var(--black);
+    font-size: 1.7rem;
+}
+.services .box-container .box p{
+    color: var(--light-color);
+    font-size: 1.1rem;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+.services .box-container .box:hover{
+    background: var(--black);
+}
+.services .box-container .box:hover h3{
+    color: #fff;
+}
+.services .box-container .box:hover p{
+    color: #eee;
+}
+
+.vehicles .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    gap: 1rem;
+}
+.vehicles .box-container .box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: max-content;
+    text-align: center;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    border-radius: .5rem;
+}
+.vehicles .box-container .box img{
+    width: 300px;
+    height: 250px;
+    object-fit: contain;
+}
+.vehicles .box-container .box h3{
+    padding-top: 10px;
+    color: var(--black);
+    font-size: 1.7rem;
+}
+.vehicles .box-container .box p{
+    color: var(--light-color);
+    font-size: 1.1rem;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+.vehicles .box-container .box:hover{
+    background: #130f40;
+    transform: scale(.9);
+}
+.vehicles .box-container .box:hover h3{
+    
+    color: #fff;
+}
+.vehicles .box-container .box:hover p{
+    
+    color: #eee;
+}
+
+.featured{
+    position: relative;
+    width: 100%;
+    height: max-content;
+    overflow: hidden;
+}
+.featured .featured_content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+}
+.featured .featured_content .featured_item{
+    position: relative;
+    width: 32.7%;
+    height: 410px;
+    display: flex;
+}
+.featured .featured_content .featured_item .form_container{
+    position: relative;
+    width: 100%;
+}
+.featured .featured_content .featured_item .form_container .box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    row-gap: 18px;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    border-radius: .5rem;
+    text-align: center;
+}
+.featured .featured_content .featured_item .form_container .box .img_box{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.featured .featured_content .featured_item .form_container .box:hover{
+    transform: scale(1.03);
+}
+.featured .featured_content .featured_item .form_container .box .img_box img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: .3s ease;
+}
+.featured .featured_content .featured_item .form_container .box .img_box:hover{
+    transform: scale(1.1);
+}
+
+.featured .featured_content .featured_item .form_container .box h3{
+    height: 40px;
+    font-size: 2rem;
+    color: var(--black);
+}
+.featured .featured_content .featured_item .form_container .box .stars{
+    height: 40px;
+    padding: 18px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.featured .featured_content .featured_item .form_container .box .stars i{
+    font-size: 1.5rem;
+    color: var(--red);
+}
+.featured .featured_content .featured_item .form_container .box .price{
+    font-size: 2.2rem;
+    color: var(--black);
+    padding: 6px 0 0 0;
+}
+.view_btn{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px 0;
+}
+.detail_btn{
+    position: relative;
+    width: max-content;
+    padding: 5px 8px;
+    background-color: #00040d;
+    color: #fff;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: .3s ease;
+}
+.detail_btn:hover{
+    background-color: #343537;
+    color: #fff;
+}
+.book_btn{
+    position: relative;
+    width: max-content;
+    padding: 8px 10px;
+    background-color: var(--light-red);
+    color: #00040d;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: .3s ease;
+    font-weight: 500;
+}
+.book_btn:hover{
+    color: #f90622;
+}
+
+
+
+.newsletter{
+    padding: 6rem 2rem;
+    text-align: center;
+    background: url('media/footer-shape-2.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #ededed;
+}
+.newsletter h3{
+    color: var(--black);
+    font-size: 3rem;
+
+}
+.newsletter p{
+    color: var(--light-color);
+    font-size: 1.5rem;
+    padding: 1rem 0;
+
+}
+.newsletter form{
+    margin: 1rem auto;
+    max-width: 60rem;
+    height: 5rem;
+    display: flex;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    border-radius: 5rem;
+}
+.newsletter form input[type="email"]{
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: none;
+    padding: 0 2rem;
+}
+.newsletter form input[type="submit"]{
+    height: 100%;
+    width: 15rem;
+    font-size: 1.7rem;
+    color: var(--black);
+    background: var(--light-red);
+    cursor: pointer;
+}
+.newsletter form input[type="submit"]:hover{
+    background: var(--red);
+}
+.reviews .reviews-slider{
+    padding-bottom: 3rem;
+}
+.reviews .reviews-slider .box{
+    padding: 2rem ;
+    margin: 2rem 0;
+    text-align: center;
+    opacity: .4;
+    transform: scale(.9);
+}
+.reviews .reviews-slider .swiper-slide-active{
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+} 
+.reviews .reviews-slider .box img{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+.reviews .reviews-slider .box .content p{
+    font-size: 1.5rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+
+}
+.reviews .reviews-slider .box .content h3{
+    font-size: 2.2rem;
+    color: var(--black);
+    padding-bottom: .5rem;
+}
+.reviews .reviews-slider .box .content .stars i{
+    font-size: 1.7rem;
+    color: var(--red);
+}
+
+.contact .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.contact .row .map{
+    width: 100%;
+    flex: 1 1 42rem;
+    padding: 2rem;
+    border: var(--border);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+}
+.contact .row form{
+    flex: 1 1 42rem;
+    padding: 2rem;
+    border: var(--border);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+.contact .row form h3{
+    font-size: 3rem;
+    color: var(--black);
+}
+.contact .row form .box{
+    margin: .7rem 0;
+    width: 100%;
+    border:var(--border);
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: none;
+    border-radius: .5rem;
+}
+.contact .row form textarea{
+    height: 15rem;
+    resize: none;
+}
+.footer{
+    background-color: #130f40;
+}
+.footer .box-container{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(24rem, 1fr));
+    justify-items: center;
+    gap: 1.5rem;
+}
+.footer .box-container .box h3{
+    color: #ededed;
+    font-size: 2.2rem;
+    padding: 1rem 0;
+}
+.footer .box-container .box a{
+    color: #ededed;
+    font-size: 1.4rem;
+    display: block;
+    padding: 1rem 0;
+}
+.footer .box-container .box a i{
+padding-right: .5rem;
+color: #c8162b;
+}
+.footer .box-container .box a:hover i{
+    padding-right: 1.2rem;
+}
+.footer .credit{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #fff;
+    padding: 1rem;
+    padding-top: 2.5rem;
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: #ededed;
+}
+
+/* ============== endeavour css ===============  */
+
+.s_product{
+    position: relative;
+    width: 100%;
+}
+.detail_container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+.endeavour{
+    position: relative;
+    width: 100%;
+    height: max-content;
+    padding-bottom: 4rem;
+    padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form_container{
+    position: relative;
+    width: 100%;
+    height: max-content;
+}
+.endeavour_container{
+    position: relative;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.endeavour_content{
+    position: relative;
+    width: 100%;
+    height: max-content;
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.price_tag{
+    position: relative;
+    background-color: #a52121;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 4px;
+}
+.endeavour_info{
+    position: relative;
+    width: 100%;
+    margin: 30px 0;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.endeavour_imgbox{
+    position: relative;
+    width: 44%;
+    height: 400px;
+    overflow: hidden;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+.endeavour_imgbox img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: .3s ease;
+}
+.endeavour_imgbox img:hover{
+    transform: scale(1.05);
+}
+
+.end_spec{
+    position: relative;
+    width: 52%;
+    height: max-content;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 40px;
+}
+.endeavour_specs{
+    position: relative;
+    width: 100%;
+    /* height: 100%; */
+    overflow: hidden;
+}
+.economy_specs{
+    position: relative;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    border-radius: 6px;
+}
+.economy,
+.preformence{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #aaa;
+}
+.economy h2,
+.preformence h2{
+    font-size: 18px;
+    padding: 9px 16px;
+    border-bottom: 1px solid #aaa;
+}
+.economy h3,
+.preformence h3{
+    font-size: 17px;
+    font-weight: 400;
+    padding: 9px 16px;
+    border-bottom: 1px solid #aaa;
+}
+
+/* ============= highlights css ==============  */
+.highlights_container{
+    position: relative;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.highlights_head{
+    position: relative;
+    width: 100%;
+    padding: 8px 0;
+    font-size: 18px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #aaa;
+}
+.highlights_desc{
+    position: relative;
+    width: 100%;
+    height: max-content;
+    font-size: 16px;
+    padding: 4px;
+    background-color: #eee;
+    border: 1px solid #aaa;
+}
+.buyBtn{
+    position: relative;
+    width: 100%;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+}
+.buy_car{
+    position: relative;
+    width: max-content;
+    padding: 8px 10px;
+    background-color: #a52121;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: .3s ease;
+}
+.buy_car:hover{
+    background-color: var(--light-red);
+    color: #000;
+}
+
+
+/* ============= highlights css ==============  */
+
+/* ============== endeavour css ===============  */
+
+/* ============ booking css ============  */
+.booking{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url("media/book-back.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+}
+.booking_container{
+    position: relative;
+    width: 50%;
+    height: max-content;
+    background-color: rgba(255,255,255,.5);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    border: 1px solid #616161;
+    padding: 10px;
+}
+.booking_container h1{
+    color: #000;
+    font-size: 22px;
+    text-align: center;
+    padding: 16px 0;
+}
+.book_form{
+    position: relative;
+    width: 100%;
+    height: max-content;
+}
+
+.name_details{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 10px 0;
+}
+.field{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.field input{
+    position: relative;
+    width: 85%;
+    background-color: rgba(255,255,255,.2);
+    height: 30px;
+    border-radius: 5px;
+    padding: 0 8px;
+    color: #000;
+}
+.field input::placeholder{
+    color: #000;
+}
+.field label{
+    position: relative;
+    width: 15%;
+    font-size: 15px;
+}
+
+.loc_details{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px 0;
+}
+.input1{
+    position: relative;
+    width: 100%;
+    row-gap: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.input1 input{
+    position: relative;
+    width: 100%;
+    background-color: rgba(255,255,255,.2);
+    height: 30px;
+    border-radius: 5px;
+    padding: 0 8px;
+    color: #000;
+}
+.input1 input::placeholder{
+    color: #000;
+}
+.input1 label{
+    position: relative;
+    width: 30%;
+    font-size: 15px;
+}
+
+.address_details{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 10px 0;
+}
+.field1{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.field1 label{
+    position: relative;
+    width: 15%;
+    font-size: 15px;
+}
+.field1 input{
+    position: relative;
+    width: 85%;
+    background-color: rgba(255,255,255,.2);
+    height: 30px;
+    border-radius: 5px;
+    padding: 0 8px;
+    color: #000;
+}
+
+.cars_details{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 10px 0;
+}
+.pro_field{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pro_field label{
+    position: relative;
+    width: 18%;
+    font-size: 15px;
+}
+.pro_field input{
+    position: relative;
+    width: 82%;
+    background-color: rgba(255,255,255,.2);
+    height: 30px;
+    border-radius: 5px;
+    padding: 0 8px;
+    color: #000;
+}
+
+.book{
+    position: relative;
+    margin: 10px 0;
+    padding: 7px 20px;
+    font-size: 15px;
+    border-radius: 4px;
+    background-color: #ff809c;
+    color: #000;
+    left: 50%;
+    transform: translate(-50%,0);
+    transition: .3s ease;
+}
+.book:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+
+/* ============ booking css ============  */
+
+@media(max-width:991px){
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 2rem;
+    }
+    .header.active{
+        padding: 2rem;
+    }
+    section{
+        padding: 2rem;
+    }
+}
+@media(max-width:788px){
+    #menu-btn{
+   display: block;
+}
+    #menu-btn.fa-times{
+        transform: rotate(180deg);
+    }
+    .header #login-btn i{
+        
+        display: block;
+    }
+    .header #login-btn .btn{
+        
+        display: none;
+    }
+    .header .navbar{
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-top: var(--border);
+        clip-path: polygon(0 0,100% 0, 100% 0,0 0);
+    }
+    .header .navbar.active{
+        clip-path: polygon(0 0,100% 0, 100% 0,0 0);
+    }
+    .header .navbar a{
+        display: block;
+        margin: 2rem;
+        font-size: 2rem;
+    }
+}
+@media(max-width:450px){
+    html{
+        font-size: 50%;
+    }
+    .heading{
+        font-size: 3rem;
+    }
+}
